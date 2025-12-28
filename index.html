@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>I'm Sorry, Shatakshi</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fde2e4, #e2f0ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+   
+    .bg-text {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 40px;
+        padding: 40px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: rgba(255, 90, 120, 0.35);
+        pointer-events: none;
+        transform: rotate(-10deg);
+        z-index: 0;
+    }
+
+    .bg-text span {
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .alt {
+        opacity: 0.7;
+    }
+
+ 
+    .container {
+        background: rgba(255, 255, 255, 0.88);
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 600px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        animation: fadeIn 2s ease;
+        z-index: 2;
+    }
+
+    h1 {
+        color: #ff6b81;
+        margin-bottom: 15px;
+        font-size: 2.2rem;
+    }
+
+    p {
+        color: #444;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .heart {
+        font-size: 3rem;
+        animation: heartbeat 1.5s infinite;
+        margin: 15px 0;
+    }
+
+    button {
+        background: #ff6b81;
+        border: none;
+        padding: 12px 25px;
+        color: white;
+        font-size: 1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    button:hover {
+        background: #ff4757;
+        transform: scale(1.05);
+    }
+
+    .hidden-message {
+        display: none;
+        margin-top: 20px;
+        color: #333;
+        font-style: italic;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heartbeat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(1); }
+    }
+
+    .floating-hearts span {
+        position: absolute;
+        color: rgba(255, 105, 135, 0.5);
+        font-size: 20px;
+        animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) scale(1);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+
+<div class="bg-text">
+    <span>i'm sooo soo sorry</span>
+    <span class="alt">i love you soo much</span>
+    <span>i'm sooo soo sorry</span>
+    <span class="alt">i love you soo much</span>
+    <span>i'm sooo soo sorry</span>
+    <span class="alt">i love you soo much</span>
+    <span>i'm sooo soo sorry</span>
+    <span class="alt">i love you soo much</span>
+    <span>i'm sooo soo sorry</span>
+    <span class="alt">i love you soo much</span>
+    <span>i'm sooo soo sorry</span>
+    <span class="alt">i love you soo much</span>
+</div>
+
+<div class="floating-hearts"></div>
+
+<div class="container">
+    <h1>I'm Sorry, Shatakshi 💗</h1>
+
+    <p>
+        I know I’ve hurt you — not once, but more times than I ever should have.  
+        And I won’t justify it. I just want you to know that I see it now.
+    </p>
+
+    <p>
+        You mean more to me than my ego, my mistakes, or my silence ever did.  
+        I never wanted to be the reason behind your pain.
+    </p>
+
+    <p>
+        I’m learning. I’m trying.  
+        And I promise to be softer, more patient, and more understanding —  
+        not just in words, but in actions.
+
+        Sab kuch theek ho jayega, I promise. Ek sath sab kuch theek karenge.
+        Give me one more chance to prove that I can be better for you, for US.
+
+    </p>
+
+    <div class="heart">❤️</div>
+
+    <button onclick="showMessage()">Tap if you still believe in me</button>
+
+    <p class="hidden-message" id="hiddenMessage">
+        No matter what you decide…  
+        I’ll always care for you deeply, Shatakshi. I love you soo much Shatakshi. 
+        — Yours, Ujju 🌙
+    </p>
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById("hiddenMessage").style.display = "block";
+    }
+
+    const container = document.querySelector('.floating-hearts');
+
+    setInterval(() => {
+        const heart = document.createElement('span');
+        heart.innerHTML = '❤';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        container.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }, 500);
+</script>
+
+</body>
+</html>
